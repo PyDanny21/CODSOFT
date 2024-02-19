@@ -111,12 +111,30 @@ nav ul{
 nav ul li{
     list-style: none;
 }
-nav ul a{
+nav ul li a{
     text-decoration: none;
     color: #333;
     font-weight: 800;
     /* margin: 0 5px; */
+    position: relative;
 }
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    background:var(--primary-color) ;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after{
+    width: 50%;
+}
+
 
 .search{
     width: 30%;
